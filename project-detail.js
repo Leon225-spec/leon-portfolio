@@ -48,7 +48,7 @@ const projectsData = {
     "personal-portfolio-site": {
         title: "Personal Portfolio Site",
         date: "June 2025",
-        image: "portfolio2.png",
+        image: "portfolio1.png",
         overview: "This is my personal portfolio website, designed to showcase my journey, skills, and projects as a front-end developer. It serves as a living resume and a platform to share my insights and articles.",
         features: [
             "Responsive and accessible design",
