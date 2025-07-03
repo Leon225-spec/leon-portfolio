@@ -49,15 +49,21 @@ thumbnails.forEach(thumbnail => {
         // Prevent default link behavior if the thumbnail is an anchor tag
         event.preventDefault();
 
-        // Get the full image source from the data-src attribute
-        const fullSrc = thumbnail.getAttribute('data-src');
-        if (fullSrc) {
-            // Set the lightbox image source
-            lightboxImage.src = fullSrc;
-            // Add 'open' class to display the lightbox
-            lightboxOverlay.classList.add('open');
-            // Prevent body scrolling when lightbox is open
-            document.body.style.overflow = 'hidden';
+        try {
+            // Get the full image source from the data-src attribute
+            const fullSrc = thumbnail.getAttribute('data-src');
+            if (fullSrc) {
+                // Set the lightbox image source
+                lightboxImage.src = fullSrc;
+                // Add 'open' class to display the lightbox
+                lightboxOverlay.classList.add('open');
+                // Prevent body scrolling when lightbox is open
+                document.body.style.overflow = 'hidden';
+            }
+        } catch (error) {
+            console.error("Error opening lightbox:", error);
+            // Optionally, display a user-friendly message instead of crashing
+            // alert("Could not open image. Please try again.");
         }
     });
 });
